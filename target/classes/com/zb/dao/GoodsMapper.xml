@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zb.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.zb.entity.Goods" >
+    <id column="goodsid" property="goodsid" jdbcType="INTEGER" />
+    <result column="goodsname" property="goodsname" jdbcType="VARCHAR" />
+    <result column="goodssynopsis" property="goodssynopsis" jdbcType="VARCHAR" />
+    <result column="goodsdetails" property="goodsdetails" jdbcType="VARCHAR" />
+    <result column="goodsClicks" property="goodsclicks" jdbcType="INTEGER" />
+    <result column="Original price" property="originalPrice" jdbcType="DOUBLE" />
+    <result column="discountprice" property="discountprice" jdbcType="DOUBLE" />
+    <result column="Sales volume" property="salesVolume" jdbcType="INTEGER" />
+    <result column="ishot" property="ishot" jdbcType="VARCHAR" />
+    <result column="isnew" property="isnew" jdbcType="VARCHAR" />
+    <result column="goodstypeid" property="goodstypeid" jdbcType="INTEGER" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    goodsid, goodsname, goodssynopsis, goodsdetails, goodsClicks, "Original price", discountprice, 
+    "Sales volume", ishot, isnew, goodstypeid, color
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zb.entity.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from goods
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from goods
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zb.entity.GoodsExample" >
+    delete from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zb.entity.Goods" >
+    insert into goods (goodsid, goodsname, goodssynopsis, 
+      goodsdetails, goodsClicks, "Original price", 
+      discountprice, "Sales volume", ishot, 
+      isnew, goodstypeid, color
+      )
+    values (#{goodsid,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, #{goodssynopsis,jdbcType=VARCHAR}, 
+      #{goodsdetails,jdbcType=VARCHAR}, #{goodsclicks,jdbcType=INTEGER}, #{originalPrice,jdbcType=DOUBLE}, 
+      #{discountprice,jdbcType=DOUBLE}, #{salesVolume,jdbcType=INTEGER}, #{ishot,jdbcType=VARCHAR}, 
+      #{isnew,jdbcType=VARCHAR}, #{goodstypeid,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zb.entity.Goods" >
+    insert into goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        goodsid,
+      </if>
+      <if test="goodsname != null" >
+        goodsname,
+      </if>
+      <if test="goodssynopsis != null" >
+        goodssynopsis,
+      </if>
+      <if test="goodsdetails != null" >
+        goodsdetails,
+      </if>
+      <if test="goodsclicks != null" >
+        goodsClicks,
+      </if>
+      <if test="originalPrice != null" >
+        "Original price",
+      </if>
+      <if test="discountprice != null" >
+        discountprice,
+      </if>
+      <if test="salesVolume != null" >
+        "Sales volume",
+      </if>
+      <if test="ishot != null" >
+        ishot,
+      </if>
+      <if test="isnew != null" >
+        isnew,
+      </if>
+      <if test="goodstypeid != null" >
+        goodstypeid,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsname != null" >
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodssynopsis != null" >
+        #{goodssynopsis,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsdetails != null" >
+        #{goodsdetails,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsclicks != null" >
+        #{goodsclicks,jdbcType=INTEGER},
+      </if>
+      <if test="originalPrice != null" >
+        #{originalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="discountprice != null" >
+        #{discountprice,jdbcType=DOUBLE},
+      </if>
+      <if test="salesVolume != null" >
+        #{salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="ishot != null" >
+        #{ishot,jdbcType=VARCHAR},
+      </if>
+      <if test="isnew != null" >
+        #{isnew,jdbcType=VARCHAR},
+      </if>
+      <if test="goodstypeid != null" >
+        #{goodstypeid,jdbcType=INTEGER},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zb.entity.GoodsExample" resultType="java.lang.Integer" >
+    select count(*) from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update goods
+    <set >
+      <if test="record.goodsid != null" >
+        goodsid = #{record.goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsname != null" >
+        goodsname = #{record.goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodssynopsis != null" >
+        goodssynopsis = #{record.goodssynopsis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsdetails != null" >
+        goodsdetails = #{record.goodsdetails,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsclicks != null" >
+        goodsClicks = #{record.goodsclicks,jdbcType=INTEGER},
+      </if>
+      <if test="record.originalPrice != null" >
+        "Original price" = #{record.originalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.discountprice != null" >
+        discountprice = #{record.discountprice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.salesVolume != null" >
+        "Sales volume" = #{record.salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="record.ishot != null" >
+        ishot = #{record.ishot,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isnew != null" >
+        isnew = #{record.isnew,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodstypeid != null" >
+        goodstypeid = #{record.goodstypeid,jdbcType=INTEGER},
+      </if>
+      <if test="record.color != null" >
+        color = #{record.color,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update goods
+    set goodsid = #{record.goodsid,jdbcType=INTEGER},
+      goodsname = #{record.goodsname,jdbcType=VARCHAR},
+      goodssynopsis = #{record.goodssynopsis,jdbcType=VARCHAR},
+      goodsdetails = #{record.goodsdetails,jdbcType=VARCHAR},
+      goodsClicks = #{record.goodsclicks,jdbcType=INTEGER},
+      "Original price" = #{record.originalPrice,jdbcType=DOUBLE},
+      discountprice = #{record.discountprice,jdbcType=DOUBLE},
+      "Sales volume" = #{record.salesVolume,jdbcType=INTEGER},
+      ishot = #{record.ishot,jdbcType=VARCHAR},
+      isnew = #{record.isnew,jdbcType=VARCHAR},
+      goodstypeid = #{record.goodstypeid,jdbcType=INTEGER},
+      color = #{record.color,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zb.entity.Goods" >
+    update goods
+    <set >
+      <if test="goodsname != null" >
+        goodsname = #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodssynopsis != null" >
+        goodssynopsis = #{goodssynopsis,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsdetails != null" >
+        goodsdetails = #{goodsdetails,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsclicks != null" >
+        goodsClicks = #{goodsclicks,jdbcType=INTEGER},
+      </if>
+      <if test="originalPrice != null" >
+        "Original price" = #{originalPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="discountprice != null" >
+        discountprice = #{discountprice,jdbcType=DOUBLE},
+      </if>
+      <if test="salesVolume != null" >
+        "Sales volume" = #{salesVolume,jdbcType=INTEGER},
+      </if>
+      <if test="ishot != null" >
+        ishot = #{ishot,jdbcType=VARCHAR},
+      </if>
+      <if test="isnew != null" >
+        isnew = #{isnew,jdbcType=VARCHAR},
+      </if>
+      <if test="goodstypeid != null" >
+        goodstypeid = #{goodstypeid,jdbcType=INTEGER},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zb.entity.Goods" >
+    update goods
+    set goodsname = #{goodsname,jdbcType=VARCHAR},
+      goodssynopsis = #{goodssynopsis,jdbcType=VARCHAR},
+      goodsdetails = #{goodsdetails,jdbcType=VARCHAR},
+      goodsClicks = #{goodsclicks,jdbcType=INTEGER},
+      "Original price" = #{originalPrice,jdbcType=DOUBLE},
+      discountprice = #{discountprice,jdbcType=DOUBLE},
+      "Sales volume" = #{salesVolume,jdbcType=INTEGER},
+      ishot = #{ishot,jdbcType=VARCHAR},
+      isnew = #{isnew,jdbcType=VARCHAR},
+      goodstypeid = #{goodstypeid,jdbcType=INTEGER},
+      color = #{color,jdbcType=VARCHAR}
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </update>
+</mapper>
