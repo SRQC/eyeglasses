@@ -8,4 +8,6 @@ import com.zb.entity.UserExample;
 public interface UserServices {
 	
 	List<User> selectByExample();
+	
+	public int seave();
 }
