@@ -3,9 +3,9 @@ package com.zb.entity;
 import java.util.Date;
 
 public class User {
-    private Integer userid;
+    private Integer id;
 
-    private String username;
+    private String name;
 
     private String password;
 
@@ -13,7 +13,7 @@ public class User {
 
     private String email;
 
-    private String jurisdiction;
+    private Integer jurisdiction;
 
     private String address;
 
@@ -23,20 +23,20 @@ public class User {
 
     private Date updateTime;
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public String getPassword() {
@@ -63,12 +63,12 @@ public class User {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getJurisdiction() {
+    public Integer getJurisdiction() {
         return jurisdiction;
     }
 
-    public void setJurisdiction(String jurisdiction) {
-        this.jurisdiction = jurisdiction == null ? null : jurisdiction.trim();
+    public void setJurisdiction(Integer jurisdiction) {
+        this.jurisdiction = jurisdiction;
     }
 
     public String getAddress() {

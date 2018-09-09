@@ -132,133 +132,133 @@ public class UserExample {
             addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
-        public Criteria andUseridIsNull() {
-            addCriterion("userid is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIsNotNull() {
-            addCriterion("userid is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUseridEqualTo(Integer value) {
-            addCriterion("userid =", value, "userid");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotEqualTo(Integer value) {
-            addCriterion("userid <>", value, "userid");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThan(Integer value) {
-            addCriterion("userid >", value, "userid");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridGreaterThanOrEqualTo(Integer value) {
-            addCriterion("userid >=", value, "userid");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThan(Integer value) {
-            addCriterion("userid <", value, "userid");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridLessThanOrEqualTo(Integer value) {
-            addCriterion("userid <=", value, "userid");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridIn(List<Integer> values) {
-            addCriterion("userid in", values, "userid");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotIn(List<Integer> values) {
-            addCriterion("userid not in", values, "userid");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridBetween(Integer value1, Integer value2) {
-            addCriterion("userid between", value1, value2, "userid");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUseridNotBetween(Integer value1, Integer value2) {
-            addCriterion("userid not between", value1, value2, "userid");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIsNull() {
-            addCriterion("username is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIsNotNull() {
-            addCriterion("username is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameEqualTo(String value) {
-            addCriterion("username =", value, "username");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotEqualTo(String value) {
-            addCriterion("username <>", value, "username");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameGreaterThan(String value) {
-            addCriterion("username >", value, "username");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameGreaterThanOrEqualTo(String value) {
-            addCriterion("username >=", value, "username");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLessThan(String value) {
-            addCriterion("username <", value, "username");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLessThanOrEqualTo(String value) {
-            addCriterion("username <=", value, "username");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameLike(String value) {
-            addCriterion("username like", value, "username");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotLike(String value) {
-            addCriterion("username not like", value, "username");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameIn(List<String> values) {
-            addCriterion("username in", values, "username");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotIn(List<String> values) {
-            addCriterion("username not in", values, "username");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameBetween(String value1, String value2) {
-            addCriterion("username between", value1, value2, "username");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andUsernameNotBetween(String value1, String value2) {
-            addCriterion("username not between", value1, value2, "username");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
 
@@ -482,62 +482,52 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionEqualTo(String value) {
+        public Criteria andJurisdictionEqualTo(Integer value) {
             addCriterion("jurisdiction =", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionNotEqualTo(String value) {
+        public Criteria andJurisdictionNotEqualTo(Integer value) {
             addCriterion("jurisdiction <>", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionGreaterThan(String value) {
+        public Criteria andJurisdictionGreaterThan(Integer value) {
             addCriterion("jurisdiction >", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionGreaterThanOrEqualTo(String value) {
+        public Criteria andJurisdictionGreaterThanOrEqualTo(Integer value) {
             addCriterion("jurisdiction >=", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionLessThan(String value) {
+        public Criteria andJurisdictionLessThan(Integer value) {
             addCriterion("jurisdiction <", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionLessThanOrEqualTo(String value) {
+        public Criteria andJurisdictionLessThanOrEqualTo(Integer value) {
             addCriterion("jurisdiction <=", value, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionLike(String value) {
-            addCriterion("jurisdiction like", value, "jurisdiction");
-            return (Criteria) this;
-        }
-
-        public Criteria andJurisdictionNotLike(String value) {
-            addCriterion("jurisdiction not like", value, "jurisdiction");
-            return (Criteria) this;
-        }
-
-        public Criteria andJurisdictionIn(List<String> values) {
+        public Criteria andJurisdictionIn(List<Integer> values) {
             addCriterion("jurisdiction in", values, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionNotIn(List<String> values) {
+        public Criteria andJurisdictionNotIn(List<Integer> values) {
             addCriterion("jurisdiction not in", values, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionBetween(String value1, String value2) {
+        public Criteria andJurisdictionBetween(Integer value1, Integer value2) {
             addCriterion("jurisdiction between", value1, value2, "jurisdiction");
             return (Criteria) this;
         }
 
-        public Criteria andJurisdictionNotBetween(String value1, String value2) {
+        public Criteria andJurisdictionNotBetween(Integer value1, Integer value2) {
             addCriterion("jurisdiction not between", value1, value2, "jurisdiction");
             return (Criteria) this;
         }

@@ -10,7 +10,7 @@ public interface GoodsTypeMapper {
 
     int deleteByExample(GoodsTypeExample example);
 
-    int deleteByPrimaryKey(Integer typeid);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(GoodsType record);
 
@@ -18,7 +18,7 @@ public interface GoodsTypeMapper {
 
     List<GoodsType> selectByExample(GoodsTypeExample example);
 
-    GoodsType selectByPrimaryKey(Integer typeid);
+    GoodsType selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") GoodsType record, @Param("example") GoodsTypeExample example);
 

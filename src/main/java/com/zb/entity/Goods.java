@@ -1,76 +1,74 @@
 package com.zb.entity;
 
 public class Goods {
-    private Integer goodsid;
+    private Integer id;
 
-    private String goodsname;
+    private String name;
 
-    private String goodssynopsis;
+    private String synopsis;
 
-    private String goodsdetails;
+    private String details;
 
-    private Integer goodsclicks;
+    private Integer clicks;
 
-    private Double originalPrice;
+    private Double price;
 
     private Double discountprice;
 
-    private Integer salesVolume;
+    private Integer salesvolume;
 
-    private String ishot;
+    private Integer isHot;
 
-    private String isnew;
+    private Integer isNew;
 
-    private Integer goodstypeid;
+    private Integer goodsTypeId;
 
-    private String color;
-
-    public Integer getGoodsid() {
-        return goodsid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getGoodsname() {
-        return goodsname;
+    public String getName() {
+        return name;
     }
 
-    public void setGoodsname(String goodsname) {
-        this.goodsname = goodsname == null ? null : goodsname.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getGoodssynopsis() {
-        return goodssynopsis;
+    public String getSynopsis() {
+        return synopsis;
     }
 
-    public void setGoodssynopsis(String goodssynopsis) {
-        this.goodssynopsis = goodssynopsis == null ? null : goodssynopsis.trim();
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis == null ? null : synopsis.trim();
     }
 
-    public String getGoodsdetails() {
-        return goodsdetails;
+    public String getDetails() {
+        return details;
     }
 
-    public void setGoodsdetails(String goodsdetails) {
-        this.goodsdetails = goodsdetails == null ? null : goodsdetails.trim();
+    public void setDetails(String details) {
+        this.details = details == null ? null : details.trim();
     }
 
-    public Integer getGoodsclicks() {
-        return goodsclicks;
+    public Integer getClicks() {
+        return clicks;
     }
 
-    public void setGoodsclicks(Integer goodsclicks) {
-        this.goodsclicks = goodsclicks;
+    public void setClicks(Integer clicks) {
+        this.clicks = clicks;
     }
 
-    public Double getOriginalPrice() {
-        return originalPrice;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setOriginalPrice(Double originalPrice) {
-        this.originalPrice = originalPrice;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Double getDiscountprice() {
@@ -81,43 +79,35 @@ public class Goods {
         this.discountprice = discountprice;
     }
 
-    public Integer getSalesVolume() {
-        return salesVolume;
+    public Integer getSalesvolume() {
+        return salesvolume;
     }
 
-    public void setSalesVolume(Integer salesVolume) {
-        this.salesVolume = salesVolume;
+    public void setSalesvolume(Integer salesvolume) {
+        this.salesvolume = salesvolume;
     }
 
-    public String getIshot() {
-        return ishot;
+    public Integer getIsHot() {
+        return isHot;
     }
 
-    public void setIshot(String ishot) {
-        this.ishot = ishot == null ? null : ishot.trim();
+    public void setIsHot(Integer isHot) {
+        this.isHot = isHot;
     }
 
-    public String getIsnew() {
-        return isnew;
+    public Integer getIsNew() {
+        return isNew;
     }
 
-    public void setIsnew(String isnew) {
-        this.isnew = isnew == null ? null : isnew.trim();
+    public void setIsNew(Integer isNew) {
+        this.isNew = isNew;
     }
 
-    public Integer getGoodstypeid() {
-        return goodstypeid;
+    public Integer getGoodsTypeId() {
+        return goodsTypeId;
     }
 
-    public void setGoodstypeid(Integer goodstypeid) {
-        this.goodstypeid = goodstypeid;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color == null ? null : color.trim();
+    public void setGoodsTypeId(Integer goodsTypeId) {
+        this.goodsTypeId = goodsTypeId;
     }
 }

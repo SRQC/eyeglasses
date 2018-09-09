@@ -2,10 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zb.dao.GoodsTypeMapper" >
   <resultMap id="BaseResultMap" type="com.zb.entity.GoodsType" >
-    <id column="typeid" property="typeid" jdbcType="INTEGER" />
-    <result column="typename" property="typename" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="pid" property="pid" jdbcType="INTEGER" />
-    <result column="twomeun" property="twomeun" jdbcType="INTEGER" />
+    <result column="twomeun" property="twomeun" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    typeid, typename, pid, twomeun
+    id, name, pid, twomeun, color
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zb.entity.GoodsTypeExample" >
     select
@@ -86,11 +87,11 @@
     select 
     <include refid="Base_Column_List" />
     from goods_type
-    where typeid = #{typeid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from goods_type
-    where typeid = #{typeid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.zb.entity.GoodsTypeExample" >
     delete from goods_type
@@ -99,19 +100,19 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zb.entity.GoodsType" >
-    insert into goods_type (typeid, typename, pid, 
-      twomeun)
-    values (#{typeid,jdbcType=INTEGER}, #{typename,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
-      #{twomeun,jdbcType=INTEGER})
+    insert into goods_type (id, name, pid, 
+      twomeun, color)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{twomeun,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zb.entity.GoodsType" >
     insert into goods_type
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="typeid != null" >
-        typeid,
+      <if test="id != null" >
+        id,
       </if>
-      <if test="typename != null" >
-        typename,
+      <if test="name != null" >
+        name,
       </if>
       <if test="pid != null" >
         pid,
@@ -119,19 +120,25 @@
       <if test="twomeun != null" >
         twomeun,
       </if>
+      <if test="color != null" >
+        color,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="typeid != null" >
-        #{typeid,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="typename != null" >
-        #{typename,jdbcType=VARCHAR},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="pid != null" >
         #{pid,jdbcType=INTEGER},
       </if>
       <if test="twomeun != null" >
-        #{twomeun,jdbcType=INTEGER},
+        #{twomeun,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -144,17 +151,20 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update goods_type
     <set >
-      <if test="record.typeid != null" >
-        typeid = #{record.typeid,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.typename != null" >
-        typename = #{record.typename,jdbcType=VARCHAR},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.pid != null" >
         pid = #{record.pid,jdbcType=INTEGER},
       </if>
       <if test="record.twomeun != null" >
-        twomeun = #{record.twomeun,jdbcType=INTEGER},
+        twomeun = #{record.twomeun,jdbcType=VARCHAR},
+      </if>
+      <if test="record.color != null" >
+        color = #{record.color,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -163,10 +173,11 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update goods_type
-    set typeid = #{record.typeid,jdbcType=INTEGER},
-      typename = #{record.typename,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
       pid = #{record.pid,jdbcType=INTEGER},
-      twomeun = #{record.twomeun,jdbcType=INTEGER}
+      twomeun = #{record.twomeun,jdbcType=VARCHAR},
+      color = #{record.color,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -174,23 +185,27 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.zb.entity.GoodsType" >
     update goods_type
     <set >
-      <if test="typename != null" >
-        typename = #{typename,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="pid != null" >
         pid = #{pid,jdbcType=INTEGER},
       </if>
       <if test="twomeun != null" >
-        twomeun = #{twomeun,jdbcType=INTEGER},
+        twomeun = #{twomeun,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
       </if>
     </set>
-    where typeid = #{typeid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zb.entity.GoodsType" >
     update goods_type
-    set typename = #{typename,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
       pid = #{pid,jdbcType=INTEGER},
-      twomeun = #{twomeun,jdbcType=INTEGER}
-    where typeid = #{typeid,jdbcType=INTEGER}
+      twomeun = #{twomeun,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -11,7 +11,7 @@ public class OrderGoods {
 
     private Integer goodsNum;
 
-    private String status;
+    private Integer status;
 
     private Double goodsPrice;
 
@@ -51,12 +51,12 @@ public class OrderGoods {
         this.goodsNum = goodsNum;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Double getGoodsPrice() {

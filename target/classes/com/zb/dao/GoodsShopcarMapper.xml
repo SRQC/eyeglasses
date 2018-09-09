@@ -3,10 +3,10 @@
 <mapper namespace="com.zb.dao.GoodsShopcarMapper" >
   <resultMap id="BaseResultMap" type="com.zb.entity.GoodsShopcar" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
     <result column="num" property="num" jdbcType="INTEGER" />
-    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="DATE" />
     <result column="update_time" property="updateTime" jdbcType="DATE" />
   </resultMap>
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, uid, goods_id, num, status, create_time, update_time
+    id, user_id, goods_id, num, status, create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zb.entity.GoodsShopcarExample" >
     select
@@ -102,11 +102,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zb.entity.GoodsShopcar" >
-    insert into goods_shopcar (id, uid, goods_id, 
+    insert into goods_shopcar (id, user_id, goods_id, 
       num, status, create_time, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
-      #{num,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
+      #{num,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, 
       #{updateTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.zb.entity.GoodsShopcar" >
@@ -115,8 +115,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="uid != null" >
-        uid,
+      <if test="userId != null" >
+        user_id,
       </if>
       <if test="goodsId != null" >
         goods_id,
@@ -138,8 +138,8 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="uid != null" >
-        #{uid,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="goodsId != null" >
         #{goodsId,jdbcType=INTEGER},
@@ -148,7 +148,7 @@
         #{num,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=DATE},
@@ -170,8 +170,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.uid != null" >
-        uid = #{record.uid,jdbcType=INTEGER},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.goodsId != null" >
         goods_id = #{record.goodsId,jdbcType=INTEGER},
@@ -180,7 +180,7 @@
         num = #{record.num,jdbcType=INTEGER},
       </if>
       <if test="record.status != null" >
-        status = #{record.status,jdbcType=VARCHAR},
+        status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=DATE},
@@ -196,10 +196,10 @@
   <update id="updateByExample" parameterType="map" >
     update goods_shopcar
     set id = #{record.id,jdbcType=INTEGER},
-      uid = #{record.uid,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       num = #{record.num,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=DATE},
       update_time = #{record.updateTime,jdbcType=DATE}
     <if test="_parameter != null" >
@@ -209,8 +209,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.zb.entity.GoodsShopcar" >
     update goods_shopcar
     <set >
-      <if test="uid != null" >
-        uid = #{uid,jdbcType=INTEGER},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="goodsId != null" >
         goods_id = #{goodsId,jdbcType=INTEGER},
@@ -219,7 +219,7 @@
         num = #{num,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=DATE},
@@ -232,10 +232,10 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zb.entity.GoodsShopcar" >
     update goods_shopcar
-    set uid = #{uid,jdbcType=INTEGER},
+    set user_id = #{userId,jdbcType=INTEGER},
       goods_id = #{goodsId,jdbcType=INTEGER},
       num = #{num,jdbcType=INTEGER},
-      status = #{status,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=DATE},
       update_time = #{updateTime,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}

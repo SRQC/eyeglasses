@@ -7,7 +7,7 @@ public class DbOrder {
 
     private String orderNumber;
 
-    private Integer uid;
+    private Integer userId;
 
     private Double payPrice;
 
@@ -15,21 +15,21 @@ public class DbOrder {
 
     private Date payTime;
 
+    private Integer isShip;
+
+    private Date shipTime;
+
     private String isReceip;
 
-    private Date receipt;
-
-    private String shipNumber;
-
-    private String status;
+    private Date receiptTime;
 
     private Date createTime;
 
     private Date updateTime;
 
-    private String isShip;
+    private String shipNumber;
 
-    private Date shipTime;
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -47,12 +47,12 @@ public class DbOrder {
         this.orderNumber = orderNumber == null ? null : orderNumber.trim();
     }
 
-    public Integer getUid() {
-        return uid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Double getPayPrice() {
@@ -79,6 +79,22 @@ public class DbOrder {
         this.payTime = payTime;
     }
 
+    public Integer getIsShip() {
+        return isShip;
+    }
+
+    public void setIsShip(Integer isShip) {
+        this.isShip = isShip;
+    }
+
+    public Date getShipTime() {
+        return shipTime;
+    }
+
+    public void setShipTime(Date shipTime) {
+        this.shipTime = shipTime;
+    }
+
     public String getIsReceip() {
         return isReceip;
     }
@@ -87,28 +103,12 @@ public class DbOrder {
         this.isReceip = isReceip == null ? null : isReceip.trim();
     }
 
-    public Date getReceipt() {
-        return receipt;
+    public Date getReceiptTime() {
+        return receiptTime;
     }
 
-    public void setReceipt(Date receipt) {
-        this.receipt = receipt;
-    }
-
-    public String getShipNumber() {
-        return shipNumber;
-    }
-
-    public void setShipNumber(String shipNumber) {
-        this.shipNumber = shipNumber == null ? null : shipNumber.trim();
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setReceiptTime(Date receiptTime) {
+        this.receiptTime = receiptTime;
     }
 
     public Date getCreateTime() {
@@ -127,19 +127,19 @@ public class DbOrder {
         this.updateTime = updateTime;
     }
 
-    public String getIsShip() {
-        return isShip;
+    public String getShipNumber() {
+        return shipNumber;
     }
 
-    public void setIsShip(String isShip) {
-        this.isShip = isShip == null ? null : isShip.trim();
+    public void setShipNumber(String shipNumber) {
+        this.shipNumber = shipNumber == null ? null : shipNumber.trim();
     }
 
-    public Date getShipTime() {
-        return shipTime;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setShipTime(Date shipTime) {
-        this.shipTime = shipTime;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

@@ -6,5 +6,6 @@ import com.zb.entity.User;
 import com.zb.entity.UserExample;
 
 public interface UserServices {
-	List<User> selectByExample(UserExample example);
+	
+	List<User> selectByExample();
 }

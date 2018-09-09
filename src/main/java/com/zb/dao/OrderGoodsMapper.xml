@@ -6,7 +6,7 @@
     <result column="order_id" property="orderId" jdbcType="INTEGER" />
     <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
     <result column="goods_num" property="goodsNum" jdbcType="INTEGER" />
-    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
     <result column="goods_price" property="goodsPrice" jdbcType="DOUBLE" />
     <result column="create_time" property="createTime" jdbcType="DATE" />
     <result column="update_time" property="updateTime" jdbcType="DATE" />
@@ -107,7 +107,7 @@
       goods_num, status, goods_price, 
       create_time, update_time)
     values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
-      #{goodsNum,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=DOUBLE}, 
+      #{goodsNum,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{goodsPrice,jdbcType=DOUBLE}, 
       #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.zb.entity.OrderGoods" >
@@ -152,7 +152,7 @@
         #{goodsNum,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="goodsPrice != null" >
         #{goodsPrice,jdbcType=DOUBLE},
@@ -187,7 +187,7 @@
         goods_num = #{record.goodsNum,jdbcType=INTEGER},
       </if>
       <if test="record.status != null" >
-        status = #{record.status,jdbcType=VARCHAR},
+        status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.goodsPrice != null" >
         goods_price = #{record.goodsPrice,jdbcType=DOUBLE},
@@ -209,7 +209,7 @@
       order_id = #{record.orderId,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       goods_num = #{record.goodsNum,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
       goods_price = #{record.goodsPrice,jdbcType=DOUBLE},
       create_time = #{record.createTime,jdbcType=DATE},
       update_time = #{record.updateTime,jdbcType=DATE}
@@ -230,7 +230,7 @@
         goods_num = #{goodsNum,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
       </if>
       <if test="goodsPrice != null" >
         goods_price = #{goodsPrice,jdbcType=DOUBLE},
@@ -249,7 +249,7 @@
     set order_id = #{orderId,jdbcType=INTEGER},
       goods_id = #{goodsId,jdbcType=INTEGER},
       goods_num = #{goodsNum,jdbcType=INTEGER},
-      status = #{status,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
       goods_price = #{goodsPrice,jdbcType=DOUBLE},
       create_time = #{createTime,jdbcType=DATE},
       update_time = #{updateTime,jdbcType=DATE}

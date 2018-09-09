@@ -1,28 +1,30 @@
 package com.zb.entity;
 
 public class GoodsType {
-    private Integer typeid;
+    private Integer id;
 
-    private String typename;
+    private String name;
 
     private Integer pid;
 
-    private Integer twomeun;
+    private String twomeun;
 
-    public Integer getTypeid() {
-        return typeid;
+    private String color;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setTypeid(Integer typeid) {
-        this.typeid = typeid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getTypename() {
-        return typename;
+    public String getName() {
+        return name;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename == null ? null : typename.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public Integer getPid() {
@@ -33,11 +35,19 @@ public class GoodsType {
         this.pid = pid;
     }
 
-    public Integer getTwomeun() {
+    public String getTwomeun() {
         return twomeun;
     }
 
-    public void setTwomeun(Integer twomeun) {
-        this.twomeun = twomeun;
+    public void setTwomeun(String twomeun) {
+        this.twomeun = twomeun == null ? null : twomeun.trim();
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color == null ? null : color.trim();
     }
 }

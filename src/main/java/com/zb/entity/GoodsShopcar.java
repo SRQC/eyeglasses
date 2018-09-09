@@ -5,13 +5,13 @@ import java.util.Date;
 public class GoodsShopcar {
     private Integer id;
 
-    private Integer uid;
+    private Integer userId;
 
     private Integer goodsId;
 
     private Integer num;
 
-    private String status;
+    private Integer status;
 
     private Date createTime;
 
@@ -25,12 +25,12 @@ public class GoodsShopcar {
         this.id = id;
     }
 
-    public Integer getUid() {
-        return uid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getGoodsId() {
@@ -49,12 +49,12 @@ public class GoodsShopcar {
         this.num = num;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getCreateTime() {

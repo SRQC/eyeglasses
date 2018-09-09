@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zb.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="com.zb.entity.User" >
-    <id column="userid" property="userid" jdbcType="INTEGER" />
-    <result column="username" property="username" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="CHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="jurisdiction" property="jurisdiction" jdbcType="VARCHAR" />
+    <result column="jurisdiction" property="jurisdiction" jdbcType="INTEGER" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="DATE" />
     <result column="update_id" property="updateId" jdbcType="INTEGER" />
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    userid, username, password, phone, email, jurisdiction, address, create_time, update_id, 
+    id, name, password, phone, email, jurisdiction, address, create_time, update_id, 
     update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zb.entity.UserExample" >
@@ -93,11 +93,11 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
-    where userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.zb.entity.UserExample" >
     delete from user
@@ -106,23 +106,23 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zb.entity.User" >
-    insert into user (userid, username, password, 
+    insert into user (id, name, password, 
       phone, email, jurisdiction, 
       address, create_time, update_id, 
       update_time)
-    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{jurisdiction,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=CHAR}, #{email,jdbcType=VARCHAR}, #{jurisdiction,jdbcType=INTEGER}, 
       #{address,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{updateId,jdbcType=INTEGER}, 
       #{updateTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.zb.entity.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        userid,
+      <if test="id != null" >
+        id,
       </if>
-      <if test="username != null" >
-        username,
+      <if test="name != null" >
+        name,
       </if>
       <if test="password != null" >
         password,
@@ -150,23 +150,23 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        #{userid,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
+        #{phone,jdbcType=CHAR},
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
       <if test="jurisdiction != null" >
-        #{jurisdiction,jdbcType=VARCHAR},
+        #{jurisdiction,jdbcType=INTEGER},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
@@ -191,23 +191,23 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update user
     <set >
-      <if test="record.userid != null" >
-        userid = #{record.userid,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.username != null" >
-        username = #{record.username,jdbcType=VARCHAR},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.password != null" >
         password = #{record.password,jdbcType=VARCHAR},
       </if>
       <if test="record.phone != null" >
-        phone = #{record.phone,jdbcType=VARCHAR},
+        phone = #{record.phone,jdbcType=CHAR},
       </if>
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
       </if>
       <if test="record.jurisdiction != null" >
-        jurisdiction = #{record.jurisdiction,jdbcType=VARCHAR},
+        jurisdiction = #{record.jurisdiction,jdbcType=INTEGER},
       </if>
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
@@ -228,12 +228,12 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update user
-    set userid = #{record.userid,jdbcType=INTEGER},
-      username = #{record.username,jdbcType=VARCHAR},
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=CHAR},
       email = #{record.email,jdbcType=VARCHAR},
-      jurisdiction = #{record.jurisdiction,jdbcType=VARCHAR},
+      jurisdiction = #{record.jurisdiction,jdbcType=INTEGER},
       address = #{record.address,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=DATE},
       update_id = #{record.updateId,jdbcType=INTEGER},
@@ -245,20 +245,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.zb.entity.User" >
     update user
     <set >
-      <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR},
+        phone = #{phone,jdbcType=CHAR},
       </if>
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
       <if test="jurisdiction != null" >
-        jurisdiction = #{jurisdiction,jdbcType=VARCHAR},
+        jurisdiction = #{jurisdiction,jdbcType=INTEGER},
       </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
@@ -273,19 +273,19 @@
         update_time = #{updateTime,jdbcType=DATE},
       </if>
     </set>
-    where userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zb.entity.User" >
     update user
-    set username = #{username,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=CHAR},
       email = #{email,jdbcType=VARCHAR},
-      jurisdiction = #{jurisdiction,jdbcType=VARCHAR},
+      jurisdiction = #{jurisdiction,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=DATE},
       update_id = #{updateId,jdbcType=INTEGER},
       update_time = #{updateTime,jdbcType=DATE}
-    where userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

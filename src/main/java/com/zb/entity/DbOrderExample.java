@@ -262,63 +262,63 @@ public class DbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andUidIsNull() {
-            addCriterion("uid is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("user_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUidIsNotNull() {
-            addCriterion("uid is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("user_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUidEqualTo(Integer value) {
-            addCriterion("uid =", value, "uid");
+        public Criteria andUserIdEqualTo(Integer value) {
+            addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotEqualTo(Integer value) {
-            addCriterion("uid <>", value, "uid");
+        public Criteria andUserIdNotEqualTo(Integer value) {
+            addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThan(Integer value) {
-            addCriterion("uid >", value, "uid");
+        public Criteria andUserIdGreaterThan(Integer value) {
+            addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("uid >=", value, "uid");
+        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThan(Integer value) {
-            addCriterion("uid <", value, "uid");
+        public Criteria andUserIdLessThan(Integer value) {
+            addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThanOrEqualTo(Integer value) {
-            addCriterion("uid <=", value, "uid");
+        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
+            addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidIn(List<Integer> values) {
-            addCriterion("uid in", values, "uid");
+        public Criteria andUserIdIn(List<Integer> values) {
+            addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotIn(List<Integer> values) {
-            addCriterion("uid not in", values, "uid");
+        public Criteria andUserIdNotIn(List<Integer> values) {
+            addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidBetween(Integer value1, Integer value2) {
-            addCriterion("uid between", value1, value2, "uid");
+        public Criteria andUserIdBetween(Integer value1, Integer value2) {
+            addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotBetween(Integer value1, Integer value2) {
-            addCriterion("uid not between", value1, value2, "uid");
+        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("user_id not between", value1, value2, "userId");
             return (Criteria) this;
         }
 
@@ -502,6 +502,126 @@ public class DbOrderExample {
             return (Criteria) this;
         }
 
+        public Criteria andIsShipIsNull() {
+            addCriterion("is_ship is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipIsNotNull() {
+            addCriterion("is_ship is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipEqualTo(Integer value) {
+            addCriterion("is_ship =", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipNotEqualTo(Integer value) {
+            addCriterion("is_ship <>", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipGreaterThan(Integer value) {
+            addCriterion("is_ship >", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipGreaterThanOrEqualTo(Integer value) {
+            addCriterion("is_ship >=", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipLessThan(Integer value) {
+            addCriterion("is_ship <", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipLessThanOrEqualTo(Integer value) {
+            addCriterion("is_ship <=", value, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipIn(List<Integer> values) {
+            addCriterion("is_ship in", values, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipNotIn(List<Integer> values) {
+            addCriterion("is_ship not in", values, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipBetween(Integer value1, Integer value2) {
+            addCriterion("is_ship between", value1, value2, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsShipNotBetween(Integer value1, Integer value2) {
+            addCriterion("is_ship not between", value1, value2, "isShip");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeIsNull() {
+            addCriterion("ship_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeIsNotNull() {
+            addCriterion("ship_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeEqualTo(Date value) {
+            addCriterionForJDBCDate("ship_time =", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("ship_time <>", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("ship_time >", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("ship_time >=", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeLessThan(Date value) {
+            addCriterionForJDBCDate("ship_time <", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("ship_time <=", value, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeIn(List<Date> values) {
+            addCriterionForJDBCDate("ship_time in", values, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("ship_time not in", values, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("ship_time between", value1, value2, "shipTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andShipTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("ship_time not between", value1, value2, "shipTime");
+            return (Criteria) this;
+        }
+
         public Criteria andIsReceipIsNull() {
             addCriterion("is_receip is null");
             return (Criteria) this;
@@ -572,203 +692,63 @@ public class DbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andReceiptIsNull() {
-            addCriterion("receipt is null");
+        public Criteria andReceiptTimeIsNull() {
+            addCriterion("receipt_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptIsNotNull() {
-            addCriterion("receipt is not null");
+        public Criteria andReceiptTimeIsNotNull() {
+            addCriterion("receipt_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptEqualTo(Date value) {
-            addCriterionForJDBCDate("receipt =", value, "receipt");
+        public Criteria andReceiptTimeEqualTo(Date value) {
+            addCriterionForJDBCDate("receipt_time =", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptNotEqualTo(Date value) {
-            addCriterionForJDBCDate("receipt <>", value, "receipt");
+        public Criteria andReceiptTimeNotEqualTo(Date value) {
+            addCriterionForJDBCDate("receipt_time <>", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptGreaterThan(Date value) {
-            addCriterionForJDBCDate("receipt >", value, "receipt");
+        public Criteria andReceiptTimeGreaterThan(Date value) {
+            addCriterionForJDBCDate("receipt_time >", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("receipt >=", value, "receipt");
+        public Criteria andReceiptTimeGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("receipt_time >=", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptLessThan(Date value) {
-            addCriterionForJDBCDate("receipt <", value, "receipt");
+        public Criteria andReceiptTimeLessThan(Date value) {
+            addCriterionForJDBCDate("receipt_time <", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("receipt <=", value, "receipt");
+        public Criteria andReceiptTimeLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("receipt_time <=", value, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptIn(List<Date> values) {
-            addCriterionForJDBCDate("receipt in", values, "receipt");
+        public Criteria andReceiptTimeIn(List<Date> values) {
+            addCriterionForJDBCDate("receipt_time in", values, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptNotIn(List<Date> values) {
-            addCriterionForJDBCDate("receipt not in", values, "receipt");
+        public Criteria andReceiptTimeNotIn(List<Date> values) {
+            addCriterionForJDBCDate("receipt_time not in", values, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("receipt between", value1, value2, "receipt");
+        public Criteria andReceiptTimeBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("receipt_time between", value1, value2, "receiptTime");
             return (Criteria) this;
         }
 
-        public Criteria andReceiptNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("receipt not between", value1, value2, "receipt");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberIsNull() {
-            addCriterion("ship_number is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberIsNotNull() {
-            addCriterion("ship_number is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberEqualTo(String value) {
-            addCriterion("ship_number =", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberNotEqualTo(String value) {
-            addCriterion("ship_number <>", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberGreaterThan(String value) {
-            addCriterion("ship_number >", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberGreaterThanOrEqualTo(String value) {
-            addCriterion("ship_number >=", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberLessThan(String value) {
-            addCriterion("ship_number <", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberLessThanOrEqualTo(String value) {
-            addCriterion("ship_number <=", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberLike(String value) {
-            addCriterion("ship_number like", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberNotLike(String value) {
-            addCriterion("ship_number not like", value, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberIn(List<String> values) {
-            addCriterion("ship_number in", values, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberNotIn(List<String> values) {
-            addCriterion("ship_number not in", values, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberBetween(String value1, String value2) {
-            addCriterion("ship_number between", value1, value2, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andShipNumberNotBetween(String value1, String value2) {
-            addCriterion("ship_number not between", value1, value2, "shipNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNull() {
-            addCriterion("status is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusEqualTo(String value) {
-            addCriterion("status =", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotEqualTo(String value) {
-            addCriterion("status <>", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThan(String value) {
-            addCriterion("status >", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThanOrEqualTo(String value) {
-            addCriterion("status >=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThan(String value) {
-            addCriterion("status <", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThanOrEqualTo(String value) {
-            addCriterion("status <=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLike(String value) {
-            addCriterion("status like", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotLike(String value) {
-            addCriterion("status not like", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIn(List<String> values) {
-            addCriterion("status in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotIn(List<String> values) {
-            addCriterion("status not in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusBetween(String value1, String value2) {
-            addCriterion("status between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotBetween(String value1, String value2) {
-            addCriterion("status not between", value1, value2, "status");
+        public Criteria andReceiptTimeNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("receipt_time not between", value1, value2, "receiptTime");
             return (Criteria) this;
         }
 
@@ -892,133 +872,133 @@ public class DbOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsShipIsNull() {
-            addCriterion("is_ship is null");
+        public Criteria andShipNumberIsNull() {
+            addCriterion("ship_number is null");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipIsNotNull() {
-            addCriterion("is_ship is not null");
+        public Criteria andShipNumberIsNotNull() {
+            addCriterion("ship_number is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipEqualTo(String value) {
-            addCriterion("is_ship =", value, "isShip");
+        public Criteria andShipNumberEqualTo(String value) {
+            addCriterion("ship_number =", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipNotEqualTo(String value) {
-            addCriterion("is_ship <>", value, "isShip");
+        public Criteria andShipNumberNotEqualTo(String value) {
+            addCriterion("ship_number <>", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipGreaterThan(String value) {
-            addCriterion("is_ship >", value, "isShip");
+        public Criteria andShipNumberGreaterThan(String value) {
+            addCriterion("ship_number >", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipGreaterThanOrEqualTo(String value) {
-            addCriterion("is_ship >=", value, "isShip");
+        public Criteria andShipNumberGreaterThanOrEqualTo(String value) {
+            addCriterion("ship_number >=", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipLessThan(String value) {
-            addCriterion("is_ship <", value, "isShip");
+        public Criteria andShipNumberLessThan(String value) {
+            addCriterion("ship_number <", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipLessThanOrEqualTo(String value) {
-            addCriterion("is_ship <=", value, "isShip");
+        public Criteria andShipNumberLessThanOrEqualTo(String value) {
+            addCriterion("ship_number <=", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipLike(String value) {
-            addCriterion("is_ship like", value, "isShip");
+        public Criteria andShipNumberLike(String value) {
+            addCriterion("ship_number like", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipNotLike(String value) {
-            addCriterion("is_ship not like", value, "isShip");
+        public Criteria andShipNumberNotLike(String value) {
+            addCriterion("ship_number not like", value, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipIn(List<String> values) {
-            addCriterion("is_ship in", values, "isShip");
+        public Criteria andShipNumberIn(List<String> values) {
+            addCriterion("ship_number in", values, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipNotIn(List<String> values) {
-            addCriterion("is_ship not in", values, "isShip");
+        public Criteria andShipNumberNotIn(List<String> values) {
+            addCriterion("ship_number not in", values, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipBetween(String value1, String value2) {
-            addCriterion("is_ship between", value1, value2, "isShip");
+        public Criteria andShipNumberBetween(String value1, String value2) {
+            addCriterion("ship_number between", value1, value2, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andIsShipNotBetween(String value1, String value2) {
-            addCriterion("is_ship not between", value1, value2, "isShip");
+        public Criteria andShipNumberNotBetween(String value1, String value2) {
+            addCriterion("ship_number not between", value1, value2, "shipNumber");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeIsNull() {
-            addCriterion("ship_time is null");
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeIsNotNull() {
-            addCriterion("ship_time is not null");
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeEqualTo(Date value) {
-            addCriterionForJDBCDate("ship_time =", value, "shipTime");
+        public Criteria andStatusEqualTo(Integer value) {
+            addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("ship_time <>", value, "shipTime");
+        public Criteria andStatusNotEqualTo(Integer value) {
+            addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("ship_time >", value, "shipTime");
+        public Criteria andStatusGreaterThan(Integer value) {
+            addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("ship_time >=", value, "shipTime");
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeLessThan(Date value) {
-            addCriterionForJDBCDate("ship_time <", value, "shipTime");
+        public Criteria andStatusLessThan(Integer value) {
+            addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("ship_time <=", value, "shipTime");
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeIn(List<Date> values) {
-            addCriterionForJDBCDate("ship_time in", values, "shipTime");
+        public Criteria andStatusIn(List<Integer> values) {
+            addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("ship_time not in", values, "shipTime");
+        public Criteria andStatusNotIn(List<Integer> values) {
+            addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("ship_time between", value1, value2, "shipTime");
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
+            addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andShipTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("ship_time not between", value1, value2, "shipTime");
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
     }

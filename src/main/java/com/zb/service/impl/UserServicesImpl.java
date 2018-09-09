@@ -1,4 +1,4 @@
-package UserServices;
+package com.zb.service.impl;
 
 import java.util.List;
 
@@ -16,8 +16,11 @@ public class UserServicesImpl implements UserServices{
 	
 	private UserMapper userMapper;
 	
-	public List<User> selectByExample(UserExample example) {
+	public List<User> selectByExample() {
 		// TODO Auto-generated method stub
+		
+		UserExample example = new UserExample();
+		
 		return userMapper.selectByExample(example);
 	}
 
